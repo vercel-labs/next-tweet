@@ -30,3 +30,35 @@ export const formatDate = (date: Date) => {
   const formattedDate = `${parts.month} ${parts.day}, ${parts.year}`
   return `${formattedTime} · ${formattedDate}`
 }
+
+export const formatRemainingTime = (date: Date) => {
+  const timeDiff = date.getTime() - Date.now()
+
+  if (timeDiff < 0) {
+    return 'Final results'
+  }
+
+  const rtf = new Intl.RelativeTimeFormat('en', { numeric: 'always' })
+
+  const seconds = Math.floor(timeDiff / 1000)
+  const minutes = Math.floor(seconds / 60)
+  const hours = Math.floor(minutes / 60)
+  const days = Math.floor(hours / 24)
+
+  let result = []
+
+  if (days > 0) {
+    result = rtf.formatToParts(days, 'day')
+  } else if (hours > 0) {
+    result = rtf.formatToParts(hours, 'hour')
+  } else if (minutes > 0) {
+    result = rtf.formatToParts(minutes, 'minute')
+  } else {
+    result = rtf.formatToParts(seconds, 'second')
+  }
+
+  result.shift()
+  result.push({ type: 'literal', value: 'left' })
+
+  return result.map((part) => part.value).join(' ')
+}

@@ -1,0 +1,47 @@
+.root {
+  font-size: var(--tweet-body-font-size);
+  font-weight: var(--tweet-body-font-weight);
+  line-height: var(--tweet-body-line-height);
+  margin: var(--tweet-body-margin);
+  overflow-wrap: break-word;
+  white-space: pre-wrap;
+  margin: var(--tweet-poll-container-margin);
+  font-size: var(--tweet-quoted-body-font-size);
+}
+
+.choice {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: var(--tweet-poll-choice-margin);
+  border: var(--tweet-poll-choice-border);
+  border-radius: var(--tweet-poll-choice-border-radius);
+  position: relative;
+  padding: var(--tweet-poll-choice-padding);
+  text-align: var(--tweet-poll-choice-text-align);
+  letter-spacing: -0.025em;
+  font-weight: 500;
+}
+
+.bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background: var(--tweet-poll-choice-bar-background);
+  z-index: 0;
+  border-radius: var(--tweet-poll-choice-bar-border-radius);
+}
+
+.label {
+  width: 100%;
+  z-index: 1;
+}
+
+.percent {
+  position: absolute;
+  z-index: 1;
+  right: 0;
+  font-variant-numeric: tabular-nums;
+  font-weight: 600;
+}

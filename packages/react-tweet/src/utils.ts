@@ -83,6 +83,10 @@ export const formatNumber = (n: number): string => {
   return n.toString()
 }
 
+export const formatVoteCount = (n: number): string => {
+  return new Intl.NumberFormat('en-US').format(n)
+}
+
 type TextEntity = {
   indices: Indices
   type: 'text'
@@ -247,4 +251,5 @@ export const enrichTweet = (tweet: Tweet): EnrichedTweet => ({
         entities: getEntities(tweet.quoted_tweet),
       }
     : undefined,
+  card: tweet.card ? tweet.card : undefined,
 })

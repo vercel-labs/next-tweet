@@ -1,3 +1,4 @@
+import type { Card } from './card.js'
 import type { TweetEditControl } from './edit.js'
 import type { Indices, TweetEntities } from './entities.js'
 import type { MediaDetails } from './media.js'
@@ -43,6 +44,7 @@ export interface TweetBase {
   edit_control: TweetEditControl
   isEdited: boolean
   isStaleEdit: boolean
+  card?: Card
 }
 
 /**

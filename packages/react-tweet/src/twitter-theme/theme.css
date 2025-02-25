@@ -11,6 +11,17 @@
   --tweet-body-line-height: 1.5rem;
   --tweet-body-margin: 0;
 
+  /* Poll */
+  --tweet-poll-container-margin: 1rem 0 0;
+  --tweet-poll-choice-margin: 0.25rem 0;
+  --tweet-poll-choice-border: none;
+  --tweet-poll-choice-border-radius: 4px;
+  --tweet-poll-choice-padding: 0.25rem 0.8rem;
+  --tweet-poll-choice-text-align: left;
+  --tweet-poll-choice-bar-background: rgb(207, 217, 222);
+  --tweet-poll-choice-bar-border-radius: 4px;
+  --tweet-poll-choice-percent-font-weight: 700;
+
   /* Quoted Tweet */
   --tweet-quoted-container-margin: 0.75rem 0;
   --tweet-quoted-body-font-size: 0.938rem;
@@ -71,6 +82,7 @@
   --tweet-twitter-icon-color: var(--tweet-font-color);
   --tweet-verified-old-color: rgb(130, 154, 171);
   --tweet-verified-blue-color: var(--tweet-color-blue-primary);
+  --tweet-poll-choice-bar-background: rgb(207, 217, 222);
 }
 
 :is([data-theme='dark'], .dark) :where(.react-tweet-theme) {
@@ -100,6 +112,7 @@
   --tweet-twitter-icon-color: var(--tweet-font-color);
   --tweet-verified-old-color: rgb(130, 154, 171);
   --tweet-verified-blue-color: #fff;
+  --tweet-poll-choice-bar-background: rgb(65, 84, 100);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -129,5 +142,6 @@
     --tweet-twitter-icon-color: var(--tweet-font-color);
     --tweet-verified-old-color: rgb(130, 154, 171);
     --tweet-verified-blue-color: #fff;
+    --tweet-poll-choice-bar-background: rgb(65, 84, 100);
   }
 }

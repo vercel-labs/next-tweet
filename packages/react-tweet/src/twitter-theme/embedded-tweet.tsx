@@ -11,6 +11,7 @@ import { TweetReplies } from './tweet-replies.js'
 import { QuotedTweet } from './quoted-tweet/index.js'
 import { enrichTweet } from '../utils.js'
 import { useMemo } from 'react'
+import { TweetCard } from './tweet-card.js'
 
 type Props = {
   tweet: Tweet
@@ -25,6 +26,7 @@ export const EmbeddedTweet = ({ tweet: t, components }: Props) => {
       <TweetHeader tweet={tweet} components={components} />
       {tweet.in_reply_to_status_id_str && <TweetInReplyTo tweet={tweet} />}
       <TweetBody tweet={tweet} />
+      {tweet.card && <TweetCard card={tweet.card} />}
       {tweet.mediaDetails?.length ? (
         <TweetMedia tweet={tweet} components={components} />
       ) : null}
