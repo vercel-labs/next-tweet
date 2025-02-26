@@ -35,6 +35,9 @@
       "index": [
         "src/index"
       ],
+      "utils": [
+        "src/utils"
+      ],
       "api": [
         "src/api/index"
       ],
@@ -47,6 +50,9 @@
       "*": {
         "index": [
           "dist/index.d.ts"
+        ],
+        "utils": [
+          "dist/utils.d.ts"
         ],
         "api": [
           "dist/api/index.d.ts"

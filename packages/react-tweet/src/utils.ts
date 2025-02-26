@@ -13,6 +13,8 @@ import type {
   MediaVideo,
 } from './api/index.js'
 
+export  { formatDate } from './date-utils.js'
+
 export type TweetCoreProps = {
   id: string
   onError?(error: any): any
